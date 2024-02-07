@@ -12,6 +12,5 @@ def test_summarize_text():
         "if this code works fine. if you receive something, "
         "just say 'yay"
     )
-    print(res)
     assert res
     assert isinstance(res, str)
