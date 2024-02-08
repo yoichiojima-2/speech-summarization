@@ -28,13 +28,11 @@ jobs:
         apt update && apt install -y pip
         pip install --upgrade pip && pip install poetry
         poetry install && pip install openai-whisper
-    - name: Enter poetry shel
-      run: poetry shell
     - name: Lint with flake8
       run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        poetry run pytest
 
