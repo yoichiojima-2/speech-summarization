@@ -18,11 +18,13 @@ def main(input_path: str):
             {"role": "user", "content": input_text},
         ],
         model="gpt-4",
-    )
+    ).choices[0].message.content
+
+    print(f"response: {response}")
 
     target_dir = Path("./data/summarize_text")
     target_dir.mkdir(parents=True, exist_ok=True)
-    (target_dir / "test.txt").write_text(response.choices[0].message.content)
+    (target_dir / "test.txt").write_text(response)
 
 
 def parse_args() -> argparse.Namespace:

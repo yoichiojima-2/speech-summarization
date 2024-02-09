@@ -38,4 +38,4 @@ jobs:
       run: |
         mkdir -p ./tests/data/input
         echo "this is a test" >> ./tests/data/input/test.txt
-        poetry run pytest
+        poetry run pytest -s
