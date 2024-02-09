@@ -1,1 +1,1 @@
-The text is a simple greeting: "hello".
+The text is a simple greeting, "hello".
