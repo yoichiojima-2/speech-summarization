@@ -1,1 +1,0 @@
-The text is a simple greeting, "hello".
