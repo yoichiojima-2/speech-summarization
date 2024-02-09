@@ -6,11 +6,13 @@ from openai import OpenAI
 
 
 def main(input_path: str):
-    input_path = Path(input_path)
-    input_text = input_path.read_text()
     client = OpenAI(
         api_key=os.environ.get("OPENAI_API_KEY"),
     )
+
+    input_path = Path(input_path)
+    input_text = input_path.read_text()
+
     response = client.chat.completions.create(
         messages = [
             {"role": "user", "content": "summarize this text"},
@@ -18,7 +20,11 @@ def main(input_path: str):
         ],
         model = "gpt-4"
     )
-    return response.choices[0].message.content
+
+    target_dir = Path("./data")
+    target_dir.mkdir(parents = True, exist_ok = True)
+    (target_dir / "summarized_text.txt").write_text(response.choices[0].message.content)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -27,5 +33,5 @@ def parse_args() -> argparse.Namespace:
 
 if __name__ == "__main__":
     args = parse_args()
-    print(main(input_path = args.input_path))
+    main(input_path = args.input_path)
     

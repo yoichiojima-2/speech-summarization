@@ -8,5 +8,6 @@ import summarize_text
 
 def test_summarize_text():
     res = summarize_text.main(input_path = "./tests/data/test.txt")
-    assert res
-    assert isinstance(res, str)
+    output = Path("./data/summarized_text.txt")
+    text = output.read_text()
+    assert text
