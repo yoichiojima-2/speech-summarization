@@ -20,9 +20,9 @@ def main(input_path: str):
         model="gpt-4",
     )
 
-    target_dir = Path("./data")
+    target_dir = Path("./data/summarize_text")
     target_dir.mkdir(parents=True, exist_ok=True)
-    (target_dir / "summarized_text.txt").write_text(response.choices[0].message.content)
+    (target_dir / "test.txt").write_text(response.choices[0].message.content)
 
 
 def parse_args() -> argparse.Namespace:
