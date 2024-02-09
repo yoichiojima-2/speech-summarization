@@ -1,3 +1,4 @@
+from pathlib import Path
 import argparse
 import whisper
 
@@ -5,7 +6,10 @@ import whisper
 def main(input_path: str) -> str:
     model = whisper.load_model("base")
     res = model.transcribe(input_path)
-    return res["text"]
+
+    output_dir = Path("./data/audio2text")
+    output_dir.mkdir(parents = True, exist_ok = True)
+    (output_dir / "test.txt").write_text(res["text"])
 
 
 def parse_args() -> argparse.Namespace:
