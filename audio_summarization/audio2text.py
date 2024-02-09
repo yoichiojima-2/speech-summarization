@@ -4,8 +4,8 @@ import whisper
 
 
 def main(input_path: str) -> str:
-    model = whisper.load_model("base")
-    res = model.transcribe(input_path)
+    model = whisper.load_model("large-v2")
+    res = model.transcribe(input_path, language = "ja", temprature = 0.5)
 
     output_dir = Path("./data/audio2text")
     output_dir.mkdir(parents = True, exist_ok = True)
