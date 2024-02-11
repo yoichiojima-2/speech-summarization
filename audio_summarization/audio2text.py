@@ -4,7 +4,7 @@ import whisper
 
 
 def main(input_path: str) -> str:
-    model = whisper.load_model("large-v2")
+    model = whisper.load_model("medium")
     res = model.transcribe(input_path, language = "ja")
 
     output_dir = Path("./data/audio2text")
