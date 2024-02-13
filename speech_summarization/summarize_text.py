@@ -18,7 +18,8 @@ def summarize_text(input_path: str):
             ],
             model="gpt-4",
         )
-        .choices[0].message.content
+        .choices[0]
+        .message.content
     )
 
     print(f"response: {response}")

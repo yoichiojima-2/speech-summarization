@@ -3,7 +3,7 @@ from speech_summarization.split_text import split_text
 
 
 def test_split_text():
-    split_text(input_path = "./tests/data/split_text/test.txt", max_chunk_size = 1)
+    split_text(input_path="./tests/data/split_text/test.txt", max_chunk_size=1)
     output_dir = Path("./data/split_text")
 
     output1 = output_dir / "test_1.txt"
