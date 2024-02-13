@@ -1,11 +1,10 @@
-import argparse
 import os
 from pathlib import Path
 
 from openai import OpenAI
 
 
-def main(input_path: str):
+def summarize_text(input_path: str):
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
     input_path = Path(input_path)
@@ -26,15 +25,4 @@ def main(input_path: str):
 
     target_dir = Path("./data/summarize_text")
     target_dir.mkdir(parents=True, exist_ok=True)
-    (target_dir / "test.txt").write_text(response)
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--input-path")
-    return parser.parse_args()
-
-
-if __name__ == "__main__":
-    args = parse_args()
-    main(input_path=args.input_path)
+    (target_dir / f"{Path(input_path).stem}.txt").write_text(response)
