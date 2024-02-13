@@ -1,24 +1,27 @@
-import os
 import argparse
+import os
 from pathlib import Path
+
 from openai import OpenAI
 
 
 def main(input_path: str):
-    client = OpenAI(
-        api_key=os.environ.get("OPENAI_API_KEY"),
-    )
+    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
     input_path = Path(input_path)
     input_text = input_path.read_text()
 
-    response = client.chat.completions.create(
-        messages=[
-            {"role": "user", "content": "summarize this text"},
-            {"role": "user", "content": input_text},
-        ],
-        model="gpt-4",
-    ).choices[0].message.content
+    response = (
+        client.chat.completions.create(
+            messages=[
+                {"role": "user", "content": "summarize this text"},
+                {"role": "user", "content": input_text},
+            ],
+            model="gpt-4",
+        )
+        .choices[0]
+        .message.content
+    )
 
     print(f"response: {response}")
 
