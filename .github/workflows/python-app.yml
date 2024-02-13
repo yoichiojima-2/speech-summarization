@@ -36,8 +36,4 @@ jobs:
       env: 
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        mkdir -p ./tests/data/summarize_text
-        mkdir -p ./tests/data/split_text
-        echo "this is a test" >> ./tests/data/summarize_text/test.txt
-        echo "hello" >> ./tests/data/split_text/test.txt
         poetry run pytest -s
