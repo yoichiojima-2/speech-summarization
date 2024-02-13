@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "audio-summarization"
+name = "speech-summarization"
 version = "0.1.0"
 description = ""
 authors = ["Yoichi Ojima <yoichiojima@gmail.com>"]

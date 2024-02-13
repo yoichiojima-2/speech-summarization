@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from audio_summarization import summarize_text
+from speech_summarization import summarize_text
 
 
 def test_summarize_text():

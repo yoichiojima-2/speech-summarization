@@ -1,5 +1,5 @@
 from pathlib import Path
-from audio_summarization import split_text
+from speech_summarization import split_text
 
 
 def test_split_text():
