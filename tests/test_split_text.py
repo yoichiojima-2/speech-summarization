@@ -4,16 +4,10 @@ from speech_summarization.split_text import split_text
 
 def test_split_text():
     split_text(input_path="./tests/data/split_text/test.txt", max_chunk_size=1)
-    output_dir = Path("./data/split_text")
+    output_dir = Path("./data/split_text/test")
 
-    output1 = output_dir / "test_1.txt"
-    output2 = output_dir / "test_2.txt"
-    output3 = output_dir / "test_3.txt"
-    output4 = output_dir / "test_4.txt"
-    output5 = output_dir / "test_5.txt"
-
-    assert output1.read_text() == "h"
-    assert output2.read_text() == "e"
-    assert output3.read_text() == "l"
-    assert output4.read_text() == "l"
-    assert output5.read_text() == "o"
+    assert (output_dir / "split_1.txt").read_text() == "h"
+    assert (output_dir / "split_2.txt").read_text() == "e"
+    assert (output_dir / "split_3.txt").read_text() == "l"
+    assert (output_dir / "split_4.txt").read_text() == "l"
+    assert (output_dir / "split_5.txt").read_text() == "o"
