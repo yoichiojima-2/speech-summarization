@@ -1,6 +1,7 @@
 #!/bin/bash
 
 poetry add openai
+poetry add luigi
 poetry add --group dev pytest
 poetry add --group dev black
 poetry add --group dev isort
