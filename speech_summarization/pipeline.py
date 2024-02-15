@@ -32,7 +32,7 @@ class SplitText(luigi.Task):
         return luigi.LocalTarget(str(get_path.split_text(self.target)))
 
     def run(self):
-        split_text(input_path=str(get_path.speech2text(self.target)), max_chunk_size=4096)
+        split_text(input_path=str(get_path.speech2text(self.target)), max_chunk_size=2000)
 
 
 class SummarizeText(luigi.Task):
