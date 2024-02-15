@@ -11,6 +11,7 @@ def test_summarize_text():
     text = output.read_text()
     assert text
 
+
 def test_summarize_texts():
     output = Path("./data/summarize_text/test/")
     if output.exists():

@@ -16,6 +16,7 @@ def test_split_text():
     target = Path().cwd() / "tests/data/test.mp3"
     assert get_path.split_text(target) == Path().cwd() / f"data/split_text/{target.stem}"
 
+
 def test_summarize_text():
     target = Path().cwd() / "tests/data/split_text/test"
     assert get_path.summarize_text(target) == Path().cwd() / f"data/summarize_text/{target.stem}"
