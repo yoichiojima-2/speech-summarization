@@ -17,7 +17,7 @@ def summarize_text(input_path: str):
     input_text = input_path.read_text()
 
     prompt = (
-        "Develop a summarization model tailored for processing multiple Japanese transcripts. "
+        "Summarize the text tailored for processing multiple Japanese transcripts. "
         "These transcripts have been converted from speech to text using Whisper, and subsequently enhanced "
         "for clarity and punctuation using GPT-4, ensuring high-quality input. Each transcript represents "
         "a segment of a broader narrative or discussion and requires individual summarization. The model should: "
@@ -31,6 +31,8 @@ def summarize_text(input_path: str):
         "segment smoothly, providing a comprehensive overview of the entire discussion or narrative. "
         "Consider the benefit of intermediate steps for review or adjustment between summarizing individual transcripts "
         "and creating the final merged summary to enhance overall accuracy and cohesion."
+        "Make sure the model is written in Japanese"
+        "Do not include the prompt above in the response."
     )
 
     response = (
