@@ -27,7 +27,8 @@ jobs:
       run: |
         apt update && apt install -y pip
         pip install --upgrade pip && pip install poetry
-        poetry install && pip install openai-whisper
+        poetry install
+        poetry shell && pip install openai-whisper
     - name: Lint with flake8
       run: |
         poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
