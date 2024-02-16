@@ -11,5 +11,5 @@ for file in $input_directory/*; do
   poetry run python \
     ./speech_summarization/pipeline.py SummarizeText \
     --target "${file}" \
-    > "./logs/${filename_wo_ext}.log" 2>&1
+    | tee "./logs/${filename_wo_ext}.log" 2>&1
 done
