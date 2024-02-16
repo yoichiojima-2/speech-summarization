@@ -28,6 +28,7 @@ jobs:
         sudo apt update && sudo apt install -y pip ffmpeg
         pip install --upgrade pip && pip install poetry
         poetry install
+        poetry run pip install --upgrade pip
         poetry run pip install openai-whisper
     - name: Lint with flake8
       run: |
