@@ -39,7 +39,7 @@ def cleanse_text(input_path: str):
                 {"role": "user", "content": prompt},
                 {"role": "user", "content": input_text},
             ],
-            model="gpt-4",
+            model="gpt-3.5-turbo",
         )
         .choices[0]
         .message.content
