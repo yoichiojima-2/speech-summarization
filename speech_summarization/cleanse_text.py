@@ -24,7 +24,8 @@ def cleanse_text(input_path: str):
         "the repetitions removed."
         "Please provide the cleaned-up version of the following transcript with "
         "unnecessary repetitions removed, ensuring the text remains coherent "
-        "and true to the original content"
+        "and true to the original content. "
+        "also, I would like you to remove unnecessary spaces and newlines."
     )
 
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
