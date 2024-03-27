@@ -5,6 +5,7 @@ from speech_summarization.speech2text import speech2text
 from speech_summarization.split_text import split_text
 from speech_summarization.cleanse_text import cleanse_texts
 from speech_summarization.summarize_text import summarize_texts
+from speech_summarization.merge_text import merge_text
 
 
 class Speech2Text(luigi.Task):
@@ -54,6 +55,19 @@ class SummarizeText(luigi.Task):
 
     def output(self):
         return luigi.LocalTarget(str(get_path.summarize_text(self.target)))
+
+
+class MergeText(luigi.Task):
+    target = luigi.Parameter()
+
+    def requires(self):
+        return SummarizeText(target=self.target)
+
+    def run(self):
+        merge_text(input_dir=str(get_path.summarize_text(self.target)))
+
+    def output(self):
+        return luigi.LocalTarget(str(get_path.merge_text(self.target)))
 
 
 if __name__ == "__main__":

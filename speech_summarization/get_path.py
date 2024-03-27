@@ -19,3 +19,7 @@ def cleanse_text(target: str) -> Path:
 
 def summarize_text(target: str) -> Path:
     return app_root() / f"data/summarize_text/{Path(target).stem}"
+
+
+def merge_text(target: str) -> Path:
+    return app_root() / f"data/merge_text/{Path(target).stem}"
