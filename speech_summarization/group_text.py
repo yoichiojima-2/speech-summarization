@@ -1,6 +1,5 @@
 import re
 from pathlib import Path
-from pprint import pprint
 
 
 def group_text(target: str) -> None:
