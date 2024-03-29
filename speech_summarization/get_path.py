@@ -23,3 +23,4 @@ def summarize_text(target: str) -> Path:
 
 def merge_text(target: str) -> Path:
     return app_root() / f"data/merge_text/{Path(target).stem}"
+
