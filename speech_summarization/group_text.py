@@ -10,12 +10,15 @@ def group_text(target: str) -> None:
     target_list = []
 
     for i in Path(target).rglob("*.txt"):
-        if match := re.match(r"(.*)_(\d+).txt", i.name):
+        match_ = re.match(r"(.*)_(\d+).txt", i.name)
+        if match_:
             target_list.append({
                 "obj": i,
-                "name": match.group(1),
-                "number": match.group(2)
+                "name": match_.group(1),
+                "number": match_.group(2)
             })
+        else:
+            i.rename(output_path / i.name)
             
     names = set([i["name"] for i in target_list])
 

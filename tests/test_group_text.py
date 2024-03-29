@@ -3,11 +3,16 @@ from pathlib import Path
 from speech_summarization.group_text import group_text
 
 def test_group_text():
-    group_text("./data/merge_text")
+    output_grouped = Path("./data/group_text/test.txt")
+    output_not_grouped = Path("./data/group_text/test_not_to_split.txt")
 
-    output = Path("./data/group_text/test.txt")
-    if output.exists():
-        output.unlink()
+    if output_grouped.exists():
+        output_grouped.unlink()
+    if output_not_grouped.exists():
+        output_not_grouped.unlink()
+
     group_text("./tests/data/group_text")
-    text = output.read_text()
-    assert text
+    group_text("./tests/data/group_text")
+
+    assert output_grouped.read_text()
+    assert output_not_grouped.read_text()
