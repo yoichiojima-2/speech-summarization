@@ -24,3 +24,10 @@ def summarize_text(target: str) -> Path:
 def merge_text(target: str) -> Path:
     return app_root() / f"data/merge_text/{Path(target).stem}"
 
+
+def group_text() -> Path:
+    return app_root() / f"data/group_text"
+
+
+def refine_output() -> Path:
+    return app_root() / f"data/refine_output"

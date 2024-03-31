@@ -16,4 +16,4 @@ def split_text(input_path: str, max_chunk_size: int):
 
     for i in range(chunk_num):
         chunk_path = output_dir / f"splitted_{i + 1}.txt"
-        chunk_path.write_text(text[i * max_chunk_size: (i + 1) * max_chunk_size])
+        chunk_path.write_text(text[i * max_chunk_size : (i + 1) * max_chunk_size])

@@ -6,6 +6,8 @@ from speech_summarization.split_text import split_text
 from speech_summarization.cleanse_text import cleanse_texts
 from speech_summarization.summarize_text import summarize_texts
 from speech_summarization.merge_text import merge_text
+from speech_summarization.group_text import group_text
+from speech_summarization.refine_output import refine_outputs
 
 
 class Speech2Text(luigi.Task):

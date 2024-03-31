@@ -11,7 +11,7 @@ def merge_text(input_dir: str) -> None:
     merged_text = ""
     for _, file in sorted(target_files.items()):
         merged_text += f"{file.read_text()}\n\n"
-    
+
     output_dir = Path("./data/merge_text")
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / f"{Path(input_dir.split("/")[-1]).stem}.txt").write_text(merged_text)
+    (output_dir / f"{Path(input_dir.split(" / ")[-1]).stem}.txt").write_text(merged_text)

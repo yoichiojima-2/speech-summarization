@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 from speech_summarization.merge_text import merge_text

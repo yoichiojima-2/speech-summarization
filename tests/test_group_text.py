@@ -2,6 +2,7 @@ from pathlib import Path
 
 from speech_summarization.group_text import group_text
 
+
 def test_group_text():
     output_grouped = Path("./data/group_text/test.txt")
     output_not_grouped = Path("./data/group_text/test_not_to_split.txt")

@@ -9,7 +9,7 @@ while read -r file; do
   echo "Processing ${input_directory}/${file}"
   echo "${input_directory}/${file}"
   poetry run python \
-    ./speech_summarization/pipeline.py MergeText \
+    ./speech_summarization/pipeline.py RefineOutput \
     --target "${input_directory}/${file}" \
     | tee "./logs/${filename_wo_ext}.log" 2>&1
 done < "./scripts/target.txt"
